@@ -32,7 +32,7 @@ namespace NZWalks.API.Repositories
             }
 
             nZWalksDBContext.Walks.Remove(existingWalk);
-            await nZWalksDBContext.SaveChangesAsync(true);
+            await nZWalksDBContext.SaveChangesAsync();
 
             return existingWalk;
         }

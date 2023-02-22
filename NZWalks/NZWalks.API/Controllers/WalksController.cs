@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using NZWalks.API.Models.DTO;
 using NZWalks.API.Repositories;
 
 namespace NZWalks.API.Controllers
@@ -46,7 +45,7 @@ namespace NZWalks.API.Controllers
                 return NotFound();
             }
 
-            // Convert data back to a dto
+            // Convert data back to a DTO
             var walksDTO = mapper.Map<Models.DTO.Walk>(walks);
 
             // Return the OK response
@@ -133,7 +132,7 @@ namespace NZWalks.API.Controllers
                 return NotFound();
             }
 
-            // If the walk was found, convert back to DTO
+            // If the walk was found, convert back to DTO, then return the OK response
            var walkDTO = mapper.Map<Models.DTO.Walk>(walkDomain);
 
            return Ok(walkDTO);
